@@ -7,15 +7,15 @@ Viernes 10 Agosto 2018
 
 Preguntas
 1) Investigue posibles métodos (biblioteas, apis, etc) para el uso de hilos bajo el sistema operativo GNU Linux. P.e. pthread
-Cuando se utiliza un entorno linux es posibles utilizar API Pthread basada en "POSIX Threads" la cual cumple con el estandard POSIX.1c
-La compilación de esta biblioteca requiere la bandera -pthread para su compilación.
+Cuando se utiliza un entorno linux es posibles utilizar el API Pthread basada en "POSIX Threads" la cual cumple con el estandard POSIX.1c
+La compilación de esta biblioteca requiere la bandera -pthread en el proceso de compilado.
 
 
 2) ¿Qué métodos existen para compartir memoria (variables globales) de manera segura entre hilos?
-Para el manejo seguro de variables globales se utilizan cerrojos Mutex los cuales también son proporcionados por el API de POSIX Threads,
+Para el manejo seguro de variables globales se utilizan cerrojos MUTEX los cuales también son proporcionados por el API de POSIX Threads,
 estos cerrojos requieren una inicialización al igual que los hilos. Su funcionamiento es el siguiente, cada vez que
 se desee proteger un bloque de código que se comparta entre varios hilos se utilizan cerrojos para bloquear o desbloquear
-la entrada a esta "Sección crítica" por ello se llaman los metodos principales lock() y unlock() del cerrojo.
+la entrada a esta "Región crítica" para ello se llaman los metodos principales lock() y unlock() del cerrojo.
 
 
 

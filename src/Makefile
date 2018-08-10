@@ -8,7 +8,7 @@ all:	\
 	gcc -o build/lista.o -c lista.c 
 
 
-	gcc -o Programa build/main.o build/lista.o -pthread
+	gcc -o Programa.out build/main.o build/lista.o -pthread
 	
 
 
