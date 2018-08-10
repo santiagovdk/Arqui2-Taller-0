@@ -17,11 +17,13 @@ int randomNum(int lower, int upper)
 // Metodo ejecutado por el Hilo 1 
 void* proceso1(){
     while(1){
-        usleep(100000);
+        usleep(10000);
         int numero = randomNum(0, 255);
         Valor val = (Valor) calloc(1,sizeof(struct valor));
         val -> numero = numero;
+	pthread_mutex_lock(&lock_thread_lista);
         insertar(val,lista);
+	pthread_mutex_unlock(&lock_thread_lista);
     }
 
     return NULL;
@@ -31,7 +33,9 @@ void* proceso1(){
 void* proceso2(){
     while(1){
 	if(lista -> tamanio > 0) {
+		pthread_mutex_lock(&lock_thread_lista);
 		Valor val = pop_primer_valor(lista);
+		pthread_mutex_unlock(&lock_thread_lista);
 		int numero = val -> numero;
 		int operA = numero^32;
 		printf(ANSI_COLOR_RED "Valor leido de la lista: " ANSI_COLOR_RESET);
@@ -65,7 +69,7 @@ int main()
     }
 	
     // Inicializacion del mutex lock
-    if(pthread_mutex_init(&lock_thread_array, NULL) != 0)
+    if(pthread_mutex_init(&lock_thread_lista, NULL) != 0)
     {
         printf("\n mutex init failed\n");
     }
@@ -85,7 +89,7 @@ int main()
     }
 
     // Destruccion del candado mutex lock
-    pthread_mutex_destroy(&lock_thread_array);
+    pthread_mutex_destroy(&lock_thread_lista);
 }
 
 

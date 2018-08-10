@@ -41,7 +41,7 @@
 
 pthread_t thread_P1;        // Thread para el hilo creador de numeros
 pthread_t thread_P2;        // Thread para el hilo para operar XOR
-pthread_mutex_t lock_thread_array;      // Mutex para prevenir escritura simulatanea
+pthread_mutex_t lock_thread_lista;      // Mutex para prevenir escritura simulatanea
 Valor_List lista;			// Variable global para el manejo de la lista
 
 
