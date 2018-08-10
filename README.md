@@ -1,2 +1,2 @@
-# Arqui2-Taller-0
-Taller de hilos
+# Taller 1 - Arquitectura de Computadores 2
+
