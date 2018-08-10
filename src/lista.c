@@ -2,12 +2,11 @@
 #include <stdio.h>
 #include "lista.h"
 
-/*
-* Metodo para agregar hilos a una lista de hilos
-*/
+/**
+ * Metodo para agregar hilos a una lista de hilos
+ **/
 void insertar(Valor node, Valor_List list)
 {
-
     node->prev = NULL;
     node->next = NULL;
     if (list->head == NULL)
@@ -23,13 +22,12 @@ void insertar(Valor node, Valor_List list)
         list->tail = node;
         list->tamanio += 1;
     }
-
 }
 
 
-/*
-* Metodo para extraer el primer carro
-*/
+/**
+ * Metodo para extraer el primer carro
+ **/
 Valor pop_primer_valor(Valor_List list)
 {
     if (list->head != NULL)
@@ -41,7 +39,6 @@ Valor pop_primer_valor(Valor_List list)
             list->head = NULL;
             list->tail = NULL;
             list->tamanio -= 1;
-
         }
         else
         {
@@ -49,19 +46,15 @@ Valor pop_primer_valor(Valor_List list)
             list->head = tmp->next;
             tmp->next = NULL;
             list->tamanio -= 1;
-
         }
         return tmp;
-
     }
     else
     {
         printf("Lista vacia\n");
         return NULL;
     }
-
 }
-
 
 
 /**
@@ -74,7 +67,6 @@ void imprimir(Valor_List pLista){
     while(tmp != NULL) {
         printf("Numero: %d\n",tmp->numero);
         tmp = tmp->next;
-        //sleep(1);
     }
     printf("\n----------------------------\n\n");
 }
