@@ -30,3 +30,8 @@ Ejecución del programa
 La salida del programa especifica el valor leido cada vez de la lista.
 
 Nota: Para cancelar la ejecución del programa presionar "Ctrl + C"
+
+Referencias bibliográficas
+Ippolito, G. (n.d.). POSIX thread (pthread) libraries. Retrieved from https://www.cs.cmu.edu/afs/cs/academic/class/15492-f07/www/pthreads.htmlThe 
+
+Pthreads Library. (n.d.). Retrieved from https://www.cs.nmsu.edu/~jcook/Tools/pthreads/library.html
